@@ -1,0 +1,21 @@
+aside {
+  width: 100px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #171821;
+  border-right: 1px solid #2C2D33;
+}
+
+ul {
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+img {
+  width: 35px;
+  cursor: pointer;
+}

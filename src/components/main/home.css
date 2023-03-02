@@ -1,6 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 .home {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background: #171821;
+}
+
+main {
+  margin-top: 30px;
+}
+
+.main__title {
+  display: flex;
+  margin: 15px 0;
+  align-items: end;
+}
+
+.main__nickname,
+.main__clan {
+  margin: 0 3px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 18px;
+  color: #ffffff;
+}
+
+.main__last-battle,
+.main__reg {
+  margin: 0 5px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+  color: #a0a0a0;
+}
+
+.main__first-row {
+  width: 1440px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main__main-info {
+  width: 945px;
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #21222d;
+  border-radius: 10px;
+}
+
+.main__battles,
+.main__win-rate,
+.main__rating,
+.main__av-damage {
+  width: 225px;
+  height: 100px;
+  background: #171821;
+  border-radius: 10px;
+}
+
+.main__info-title,
+.main__info-value {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+
+  color: #ffffff;
+}
+
+.main__record-info {
+  width: 465px;
+  height: 250px;
+
+  background: #21222d;
+  border-radius: 10px;
 }

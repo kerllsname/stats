@@ -4,10 +4,10 @@ import { APPID } from './APPID';
 
 import { ClanDataType, IDDataType, PlayerDataType } from '../types/homeTypes';
 
-export const IDRequest = (): Promise<IDDataType> =>
+export const IDRequest = (nickname: string): Promise<IDDataType> =>
   ky
     .get(
-      `https://api.worldoftanks.eu/wot/account/list/?application_id=${APPID}&search=kiruksha`
+      `https://api.worldoftanks.eu/wot/account/list/?application_id=${APPID}&search=${nickname}`
     )
     .json();
 

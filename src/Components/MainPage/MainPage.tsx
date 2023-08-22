@@ -1,15 +1,20 @@
 import React, { useRef } from 'react';
-
-import ky from 'ky';
+import { useNavigate } from 'react-router-dom';
 
 import './main-page.css';
 
+import getSummonerByName from '../../Requests/requests';
+
 function MainPage() {
   const searchInput = useRef<HTMLInputElement>(null);
+  const navigation = useNavigate();
+
+  const goToSummonerPage = (summonerName: string) => navigation(`/summoner/${summonerName}`, { replace: true });
 
   async function getUserId(summonerName: string) {
-    const userData = await ky.get(`https://ru.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=RGAPI-96fe0e84-2372-4300-90b7-0200083eaf99`).json();
+    const userData = await getSummonerByName(summonerName);
 
+    if (userData) goToSummonerPage(summonerName);
     console.log(userData);
   }
 

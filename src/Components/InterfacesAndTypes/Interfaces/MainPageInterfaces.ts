@@ -1,4 +1,4 @@
-export interface SummonerData {
+export interface InitialSummonerData {
   accountId: string,
   profileIconId: number,
   name: string,

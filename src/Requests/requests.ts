@@ -6,7 +6,7 @@ import API_KEY from "./API_KEY";
 
 export default async function getSummonerByName(
   summonerName: string,
-): Promise<boolean | InitialSummonerData> {
+): Promise<null | InitialSummonerData> {
   const response = await ky.get(
     `https://ru.api.riotgames.com/lol/summoner/v4/summoners/by-name/${summonerName}?api_key=${API_KEY}`,
   );
@@ -17,5 +17,5 @@ export default async function getSummonerByName(
     return answer;
   }
 
-  return false;
+  return null;
 }

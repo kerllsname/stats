@@ -13,7 +13,9 @@ function MainPage() {
   const dispatch = useDispatch();
 
   const goToSummonerPage = (summonerName: string) =>
-    navigation(`/summoner/${summonerName}`, { replace: true });
+    navigation(`/summoner/${summonerName}`, {
+      replace: true,
+    });
 
   async function getUserId(summonerName: string) {
     const userData = await getSummonerByName(summonerName);
@@ -27,11 +29,17 @@ function MainPage() {
   return (
     <div className="main-page-wrapper">
       <div className="main-page__searchbox">
-        <select className="main-page__select">
+        <select className="main-page__select" name="region" autoComplete="on">
           <option className="main-page__option">RU</option>
           <option className="main-page__option">EUW</option>
         </select>
-        <input className="main-page__input" type="search" ref={searchInput} />
+        <input
+          className="main-page__input"
+          name="search"
+          type="search"
+          autoComplete="on"
+          ref={searchInput}
+        />
         <button
           className="main-page__button"
           type="button"

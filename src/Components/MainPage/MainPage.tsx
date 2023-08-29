@@ -1,13 +1,17 @@
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./main-page.css";
 
 import { addInitialData } from "../../Store/summonerDataSlice";
-import getSummonerByName from "../../Requests/requests";
+import { getSummonerByName } from "../../Requests/requests";
+import { Store } from "../InterfacesAndTypes/Interfaces/StoreInterfaces";
 
 function MainPage() {
+  const summonersData = useSelector(
+    (state: Store) => state.summoners.summoners,
+  );
   const searchInput = useRef<HTMLInputElement>(null);
   const navigation = useNavigate();
   const dispatch = useDispatch();
@@ -21,6 +25,14 @@ function MainPage() {
     const userData = await getSummonerByName(summonerName);
 
     if (userData) {
+      for (let x = 1; x < summonersData.length; x += 1) {
+        if (summonersData[x].initialSummonerData.name === summonerName) {
+          goToSummonerPage(summonerName);
+
+          return;
+        }
+      }
+
       dispatch(addInitialData(userData));
       goToSummonerPage(summonerName);
     }

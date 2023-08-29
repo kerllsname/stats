@@ -1,6 +1,6 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 
-import summonerReducer from './summonerDataSlice';
+import summonerReducer from "./summonerDataSlice";
 
 export default configureStore({
   reducer: {

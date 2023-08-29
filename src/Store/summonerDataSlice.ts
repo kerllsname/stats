@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const summonerDataSlice = createSlice({
-  name: 'summonersData',
+  name: "summonersData",
   initialState: {
     summoners: [
       {

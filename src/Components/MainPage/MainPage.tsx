@@ -1,18 +1,19 @@
-import React, { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
-import './main-page.css';
+import "./main-page.css";
 
-import { addInitialData } from '../../Store/summonerDataSlice';
-import getSummonerByName from '../../Requests/requests';
+import { addInitialData } from "../../Store/summonerDataSlice";
+import getSummonerByName from "../../Requests/requests";
 
 function MainPage() {
   const searchInput = useRef<HTMLInputElement>(null);
   const navigation = useNavigate();
   const dispatch = useDispatch();
 
-  const goToSummonerPage = (summonerName: string) => navigation(`/summoner/${summonerName}`, { replace: true });
+  const goToSummonerPage = (summonerName: string) =>
+    navigation(`/summoner/${summonerName}`, { replace: true });
 
   async function getUserId(summonerName: string) {
     const userData = await getSummonerByName(summonerName);
@@ -31,7 +32,17 @@ function MainPage() {
           <option className="main-page__option">EUW</option>
         </select>
         <input className="main-page__input" type="search" ref={searchInput} />
-        <button className="main-page__button" type="button" onClick={() => getUserId(searchInput.current ? searchInput.current.value : 'Кирилл без секса')}>
+        <button
+          className="main-page__button"
+          type="button"
+          onClick={() =>
+            getUserId(
+              searchInput.current
+                ? searchInput.current.value
+                : "Кирилл без секса",
+            )
+          }
+        >
           Search
         </button>
       </div>

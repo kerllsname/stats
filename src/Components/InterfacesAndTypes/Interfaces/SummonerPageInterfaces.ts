@@ -1,5 +1,5 @@
-import { InitialSummonerData } from './MainPageInterfaces';
+import { InitialSummonerData } from "./MainPageInterfaces";
 
 export interface SummonerData {
-  initialSummonerData: InitialSummonerData,
+  initialSummonerData: InitialSummonerData;
 }

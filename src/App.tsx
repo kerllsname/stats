@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<MainPage />} />
-        <Route path="/summoner/:nickname" element={<SummonerPage />} />
+        <Route path="/summoner/:region/:nickname" element={<SummonerPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
